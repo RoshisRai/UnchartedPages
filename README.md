@@ -57,7 +57,9 @@ To use Uncharted Pages:
 
 4. Run Migrations:
 
+    ```bash
     python manage.py migrate
+    ```
 
 5. Create a Superuser:
 
