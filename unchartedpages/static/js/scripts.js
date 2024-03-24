@@ -75,9 +75,6 @@ $(document).ready(function(){
 }) 
 
 
-
-
-
 var differencex =0, differencey=0
 
 // Creating a function that will give us the position of the mouse cursor
@@ -121,8 +118,6 @@ var getmousePos = function (e) {
 
 }
 
-// const canvas = document.getElementById('wrapper');
-// const canvas = document.getElementById('main');
 const canvas = document.getElementById('particles-js');
 canvas.addEventListener('mouseover' ,(e) => {
   var before = getCursorPosition(canvas, e);
@@ -136,41 +131,6 @@ canvas.addEventListener('mouseover' ,(e) => {
 canvas.addEventListener('mouseup', (e)=>{
   canvas.removeEventListener('mousemove', getmousePos)
 });
-
-
-// if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-//     // Code for mobile devices
-//     console.log("This is a mobile device")
-//     const canvas = document.getElementById('shadow');
-//     canvas.addEventListener('touchstart' ,(e) => {
-//     var before = getCursorPosition(canvas, e);
-
-//     beforex = before[0]
-//     beforey = before[1]
-
-//     canvas.addEventListener('touchmove', getmousePos);
-//     });
-
-//     canvas.addEventListener('touchend', (e)=>{
-//     canvas.removeEventListener('touchmove', getmousePos)
-//     });
-//   } else {
-//     // Code for laptop devices
-//     console.log("This is a laptop device");
-//     const canvas = document.getElementById('shadow');
-//     canvas.addEventListener('mouseover' ,(e) => {
-//     var before = getCursorPosition(canvas, e);
-
-//     beforex = before[0]
-//     beforey = before[1]
-
-//     canvas.addEventListener('mousemove', getmousePos);
-//     });
-
-//     canvas.addEventListener('mouseup', (e)=>{
-//     canvas.removeEventListener('mousemove', getmousePos)
-//     });
-//   }
 
 let dateobj = new Date();
 let currentyear = dateobj.getFullYear()
