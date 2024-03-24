@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact Us · Uncharted Pages{% endblock title %}
+
+{% block additional_header %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+<meta name="keywords" content="Uncharted Pages">
+<meta name="description" content="Explore the Pages Unseen. Contact Uncharted Pages">
+<meta name="robots" content="nofollow" />
+<meta name="og:title" content="Uncharted Pages|Contact Us" />
+<meta name="og:description" content="Explore the Pages Unseen. Contact Uncharted Pages" />
+<meta name="og:image" content="https://unchartedpages.pythonanywhere.com/static/img/logo.png" />
+<meta name='og:type' content="website">
+<meta name='og:site_name' content="Uncharted Pages">
+<meta name='og:url' content="https://unchartedpages.pythonanywhere.com/">
+<meta name="twitter:title" content="Uncharted Pages|Contact Us" />
+<meta name="twitter:description" content="Explore the Pages Unseen. Contact Uncharted Pages" />
+<meta name="twitter:image" content="https://unchartedpages.pythonanywhere.com/static/img/logo.png" />
+{% endblock additional_header %}
+
+{% block contact_active %}active{% endblock contact_active %}
+
+{% block main_content %}
+<!-- FIRST SECTION START -->
+<section id="add-margin" class="first-section">
+    <div class="contact-section">
+        <div class="contact-container">
+            <div class="contact-left" data-aos="fade-left">
+                <img src="{% static 'img/i3.jpg' %}" alt="">
+            </div>
+            <div class="contact-right" data-aos="fade-right">
+                <div class="login-box">
+                    <h2 id="typing-text" style="height: 38px;"></h2>
+                    <p>Any question or remarks? Just write us a message!</p>
+                    <form action="{% url 'contact' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="user-box">
+                        <input type="text" name="name" required="">
+                        <label>Your Name</label>
+                        </div>
+                        <div class="user-box">
+                        <input type="email" name="email" required="">
+                        <label>Your Email</label>
+                        </div>
+                        <div class="user-box">
+                        <input type="tel" name="phone" required="" pattern='[0-9]{10}'>
+                        <label>Your Phone</label>
+                        </div>
+                        <div class="user-box">
+                        <input type="text" name="subject" required="">
+                        <label>Your Subject</label>
+                        </div>
+                        <div class="user-box">
+                        <textarea name="message" id="message" required=""></textarea>
+                        <label>Your Message</label>
+                        </div>
+                        <button type="submit">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-particles" id="particles-js">
+    </div>
+</section>
+<!-- FIRST SECTION END -->
+
+<!-- SECOND SECTION START  -->
+<section class="contact-faq">
+    <div class="services-container">
+        <div class="service-boxes">
+            <div class="box" data-aos="fade-up" data-aos-offset="200">
+                <div class="service-img">
+                    <div class="img">
+                        <h2>1</h2>
+                    </div>
+                </div>
+                <div class="service-desc">
+                    <h3>How do I access my purchased digital books?</h3>
+                    <p>Upon purchasing a digital book from our store, you can easily access it through two ways. Firstly, we will send the purchased e-book and audio book to your registered email account within 24 hours of your order. Secondly, we will also share a secure drive link that contains the e-book and audio book for easy access. You can simply click on the drive link and access your purchased books from any device, anywhere and anytime. Rest assured, our team ensures that your digital books are delivered to you promptly and securely.</p>
+                </div>
+            </div>
+            <div class="box" data-aos="fade-up" data-aos-offset="200">
+                <div class="service-img">
+                    <div class="img">
+                        <h2>2</h2>
+                    </div>
+                </div>
+                <div class="service-desc">
+                    <h3>Can I gift a digital book to someone else?</h3>
+                    <p>Absolutely! At Uncharted Pages, we offer the option to purchase digital books as a gift for someone special. This can be a perfect way to share the joy of reading with a friend, family member, or loved one. When you purchase a digital book as a gift, you will have the opportunity to enter the recipient's email address during checkout. Once the purchase is complete, the book will be delivered directly to their email inbox, allowing them to enjoy it at their leisure.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- SECOND SECTION END  -->
+{% endblock main_content %}
+
+{% block additional_js %}
+<script src="https://unpkg.com/typed.js@2.0.14/dist/typed.umd.js"></script>
+<script>
+    var typed = new Typed('#typing-text', {
+        strings: ['THE MYSTERIOUS BLACK DOT', 'THE MYSTERIOUS BLACK DOT'],
+        typeSpeed: 50,
+        loop: true, 
+        backSpeed: 40,
+        backDelay: 800,
+        showCursor: false,
+        onStringTyped: (arrayPos, self) => {
+        console.log(self)
+        },
+    });
+</script>
+<script>
+    $(()=>{
+        setTimeout(function(){
+            $('.alert').fadeIn();
+            setTimeout(function(){
+                $('.alert').fadeOut();
+            }, 2200);
+        }, 1500);
+        $('.alert span:last-child').on('click',function(){
+            $(this).parent().fadeOut();
+        })
+    })
+</script>
+{% endblock additional_js %}

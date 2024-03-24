@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About · Uncharted Pages{% endblock title %}
+
+{% block additional_header %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+<meta name="keywords" content="Uncharted Pages">
+<meta name="description" content="Discover New Worlds on Every Page.">
+<meta name="robots" content="nofollow" />
+<meta name="og:title" content="Uncharted Pages|About Us" />
+<meta name="og:description" content="Discover New Worlds on Every Page." />
+<meta name="og:image" content="https://unchartedpages.pythonanywhere.com/static/img/logo.png" />
+<meta name='og:type' content="website">
+<meta name='og:site_name' content="Uncharted Pages">
+<meta name='og:url' content="https://unchartedpages.pythonanywhere.com/">
+<meta name="twitter:title" content="Uncharted Pages|About Us" />
+<meta name="twitter:description" content="Discover New Worlds on Every Page." />
+<meta name="twitter:image" content="https://unchartedpages.pythonanywhere.com/static/img/logo.png" />
+{% endblock additional_header %}
+
+{% block about_active %}active{% endblock about_active %}
+
+{% block main_content %}
+<!-- HERO SECTION START -->
+<section id="add-margin" class="first-section">
+    <div class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-featuring">&nbsp;UNCHARTED PAGES</div>
+                <div class="hero-title">ABOUT US</div>
+                <div class="hero-subtitle">Welcome to Uncharted Pages, a platform for all book lovers, aspiring writers, and literary enthusiasts. We believe in creating a community of readers and writers where ideas are shared, perspectives are broadened, and creativity is celebrated.   
+                <br><br>
+                Our mission is to spread the joy of reading and inspire people to explore the uncharted pages of the literary world.
+                 Our commitment to quality is reflected in our carefully curated selection of books that meet the highest standards of storytelling and writing. Join us on this journey and let's embark on a reading adventure together.</div>
+                <div class="hero-buttons">
+                    <button>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        CONTACT US
+                    </button>
+                </div>
+            </div>
+            <div class="hero-animated-image">
+                <div class="cube-wrapper">
+                    <div class="cube-box">
+                        <img src="{% static 'img/logoicon.png' %}">
+                        <img src="{% static 'img/logoicon.png' %}">
+                        <img src="{% static 'img/logoicon.png' %}">
+                        <img src="{% static 'img/logoicon.png' %}">
+                        <img src="{% static 'img/logoicon.png' %}">
+                        <img src="{% static 'img/logoicon.png' %}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-particles" id="particles-js">
+    </div>
+</section>
+<!-- HERO SECTION END -->
+
+<!-- SECOND SECTION START  -->
+<section class="featuring">
+    <div class="about-first-container">
+        <div class="second-section-left" data-aos="fade-left">
+            <img src="{% static 'img/i1.jpg' %}" alt="">
+        </div>
+        <div class="about-first-right" data-aos="fade-right">
+            <div class="about-first-desc">
+                <h2 id="typing-text" style="height: 38px;"></h2>
+            <p>Uncharted Pages is a carefully curated collection of literature that spans various genres, from classic works to contemporary gems. Our experienced curators hand-pick each book with great care, selecting only those that meet our high standards of storytelling and writing. We prioritize books that offer unique perspectives, showcase diverse voices, and challenge readers to think critically and creatively, ensuring that you'll always find a book that meets your needs.
+                <br><br>
+                We understand that reading is a personal and subjective experience, which is why we offer a wide range of books that cater to different tastes and interests. Our user-friendly website makes it easy for you to browse and discover new books, and our dedicated customer service team is always available to answer any questions you may have. At Uncharted Pages, we are committed to providing our readers with the best possible reading experience, and believe that everyone should have access to quality literature that inspires and enriches their lives. 
+            </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- SECOND SECTION END  -->
+
+<!-- THIRD SECTION START  -->
+<section class="promising">
+    <div class="promising-wrapper">
+        <div class="third-container">
+            <div class="third-header">
+                <h2>
+                    MISSION STATEMENT
+                </h2>
+            </div>
+            <div class="third-body">
+                <p>
+                    Our mission at Uncharted Pages is to provide a seamless reading experience for our valued readers. We are committed to offering a diverse collection of books across various genres, from classic literature to contemporary bestsellers. Our goal is to foster a community of readers and writers where ideas are shared, perspectives are broadened, and creativity is celebrated.
+                    <br><br>
+                    We believe in the transformative power of literature and its ability to inspire, educate, and entertain. Our mission is to spread the joy of reading to everyone, and we strive to accomplish this by providing a user-friendly website that enables readers to easily find their favorite books and discover new ones.
+                    <br><br>
+                    In short, our mission is to connect readers with the literary world and provide them with an immersive reading experience that leaves them wanting more.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- THIRD SECTION END  -->
+
+<!-- CONTACT SECTION START  -->
+<section class="login-section">
+    <div class="login-container">
+        <div class="login-box">
+            <h2>CONTACT US!</h2>
+            <form action="{% url 'contact' %}" method="POST">
+            {% csrf_token %}
+              <div class="user-box">
+                <input type="text" name="name" required="">
+                <label>Your Name</label>
+              </div>
+              <div class="user-box">
+                <input type="email" name="email" required="">
+                <label>Your Email</label>
+              </div>
+              <div class="user-box">
+                <input type="tel" name="phone" required="" pattern="[0-9]{10}">
+                <label>Your Phone</label>
+              </div>
+              <div class="user-box">
+                <input type="text" name="subject" required="">
+                <label>Your Subject</label>
+              </div>
+              <div class="user-box">
+                <textarea name="message" id="message" required=""></textarea>
+                <label>Your Message</label>
+              </div>
+              <button type="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Submit
+              </button>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- CONTACT SECTION END  -->
+{% endblock main_content %}
+
+{% block additional_js %}
+<script src="https://unpkg.com/typed.js@2.0.14/dist/typed.umd.js"></script>
+<script>
+    var typed = new Typed('#typing-text', {
+        strings: ['OUR COMMITMENT', 'TO QUALITY'],
+        typeSpeed: 50,
+        loop: true, 
+        backSpeed: 40,
+        backDelay: 800,
+        showCursor: false,
+        onStringTyped: (arrayPos, self) => {
+        console.log(self)
+        },
+    });
+</script>
+<script>
+    $(()=>{
+        setTimeout(function(){
+            $('.alert').fadeIn();
+            setTimeout(function(){
+                $('.alert').fadeOut();
+            }, 2200);
+        }, 1500);
+        $('.alert span:last-child').on('click',function(){
+            $(this).parent().fadeOut();
+        })
+    })
+</script>
+{% endblock additional_js %}

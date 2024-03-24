@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Uncharted Pages : Find Your Next Adventure At Uncharted Pages{% endblock title %}
+
+{% block additionalheader %}
+<meta name="keywords" content="Books, Literature, Reading, Classic literature, Book-lovers, Cultural enrichment, Personal growth, Storytelling, Community, Literary exploration, New releases, Book reviews, Reading recommendations, Book clubs, Author interviews, Literary events, Uncharted Pages">
+<meta name="description" content="Welcome to Uncharted Pages, your destination for all things literature. Discover new books, explore classic literature, and connect with fellow book-lovers from around the world. Our mission is to promote reading and literacy as tools for personal growth and cultural enrichment. Join us on this journey through the pages of time and explore the power of storytelling.">
+<meta name="robots" content="index, follow" />
+<link rel="cannonical" href="https://unchartedpages.pythonanywhere.com/">
+<meta name="og:title" content="Uncharted Pages" />
+<meta name="og:description" content="Welcome to Uncharted Pages, your destination for all things literature. Discover new books, explore classic literature, and connect with fellow book-lovers from around the world. Our mission is to promote reading and literacy as tools for personal growth and cultural enrichment. Join us on this journey through the pages of time and explore the power of storytelling." />
+<meta name="og:image" content="https://unchartedpages.pythonanywhere.com/static/img/logo.png" />
+<meta name='og:type' content="website">
+<meta name='og:site_name' content="Uncharted Pages">
+<meta name='og:url' content="https://unchartedpages.pythonanywhere.com/">
+<meta name="twitter:title" content="Uncharted Pages" />
+<meta name="twitter:description" content="Welcome to Uncharted Pages, your destination for all things literature. Discover new books, explore classic literature, and connect with fellow book-lovers from around the world. Our mission is to promote reading and literacy as tools for personal growth and cultural enrichment. Join us on this journey through the pages of time and explore the power of storytelling." />
+<meta name="twitter:image" content="https://unchartedpages.pythonanywhere.com/static/img/logo.png" />
+{% endblock additionalheader %}
+
+{% block home_active %}active{% endblock home_active %}
+
+{% block main_content %}
+<!-- HERO SECTION START -->
+<section id="add-margin" class="first-section">
+    <div class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-featuring">FEATURING</div>
+                <div class="hero-title">Unravel the Mystery of "The Mysterious Black Dot"</div>
+                <div class="hero-subtitle">Unravel the secrets of Miyok's enigmatic mark and embark on a thrilling journey into a world of mystery and intrigue. Discover the hidden truths behind this cryptic symbol and experience a story that will keep you on the edge of your seat until the very end.</div>
+                <div class="hero-buttons">
+                    <a href="{% url 'about' %}">
+                        <button>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            ABOUT US
+                        </button>
+                    </a>
+                    <a href="{% url 'buy-book' %}">
+                        <button>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            BUY NOW <i class="fa-solid fa-cart-shopping"></i>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-animated-image">
+                <div class="wrapper" id="wrapper">
+                    <div class="shape" id="shape">
+                        <div class="face"></div>
+                        <div class="face"></div>
+                        <div class="face"></div>
+                        <div class="face"></div>
+                        <div class="face"></div>
+                        <div class="face"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-particles" id="particles-js">
+    </div>
+</section>
+<!-- HERO SECTION END -->
+
+<!-- FEATURING CONTENT SECTION START  -->
+<section class="featuring">
+    <div class="about-first-container">
+        <div class="about-first-left" data-aos="fade-left">
+            <div class="about-first-img1">
+                <img src="{% static 'img/front.png' %}" alt="">
+            </div>
+            
+            <div class="about-first-img2">
+                <img src="{% static 'img/page2.png' %}" alt="">
+            </div>
+        </div>
+        <div class="about-first-right" data-aos="fade-right">
+            <div class="about-first-desc">
+                <h2 id="typing-text"></h2>
+            <p>"The Mysterious Black Dot", this story takes readers on a thrilling journey through the eyes of protagonist Miyok as he unravels the secrets behind a strange mark on his back. The story weaves together elements of mystery, intrigue, and suspense, leaving readers on the edge of their seats until the very end. With a unique and captivating plot and richly developed characters, this book is a must-read for anyone who loves a good mystery. Don't miss your chance to explore the secrets hidden within the enigmatic mark in this captivating tale.
+            </p>
+            </div>
+            <div class="hero-buttons">
+                <a href="{% url 'buy-book' %}">
+                    <button>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        BUY NOW <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- FEATURING CONTENT SECTION END  -->
+
+<!-- PROMISING SECTION START  -->
+<section class="promising">
+    <div class="promising-wrapper">
+        <div class="promising-container">
+            <div class="promising-left">
+                <h2>Unleash your imagination, explore uncharted pages</h2>
+            </div>
+            <div class="promising-right">
+                <div class="promise1">
+                    <div class="promise-icon1">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <div class="promise-texts">
+                        <div class="promise-pre-title">
+                            Easy Book Purchase
+                        </div>
+                        <div class="promise-title">
+                            Buy
+                        </div>
+                        <div class="promise-sub-title">
+                            Purchase Your Favorite E-Books Effortlessly
+                        </div>
+                    </div>
+                </div>
+                <div class="promise2">
+                    <div class="promise-icon2">
+                        <i class="fa-solid fa-newspaper"></i>
+                    </div>
+                    <div class="promise-texts">
+                        <div class="promise-pre-title">
+                            Literary Blog
+                        </div>
+                        <div class="promise-title">
+                            Explore
+                        </div>
+                        <div class="promise-sub-title">
+                            Dive into Our Literary Blog
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- PROMISING SECTION END  -->
+
+<!-- UNCHARTED ABOUT SECTION START  -->
+<section class="services-proud">
+    <div class="services-proud-container">
+        <div class="services-proud-right">
+            <h3><div data-aos="fade-right">ABOUT UNCHARTED PAGES</div></h3>
+            <p>Welcome to Uncharted Pages, a platform for avid readers, aspiring writers, and literary enthusiasts to indulge in their passion for books. Our mission is to provide a seamless reading experience by offering a diverse collection of books across various genres, from classic literature to contemporary bestsellers. We believe in fostering a community of readers and writers, where ideas are shared, perspectives are broadened, and creativity is celebrated. Join us on this journey and explore the uncharted pages of the literary world.
+                <br><br>
+            Our mission is to provide a seamless reading experience for avid readers, aspiring writers, and literary enthusiasts. We offer a diverse collection of books across various genres, ranging from classic literature to contemporary bestsellers. Our goal is to foster a community of readers and writers where ideas are shared, perspectives are broadened, and creativity is celebrated.
+            </p>
+        </div>
+        <div class="services-proud-left">
+            <div class="services-proud-img">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- UNCHARTED ABOUT SECTION END  -->
+{% endblock main_content %}
+
+{% block additional_js %}
+<script src="https://unpkg.com/typed.js@2.0.14/dist/typed.umd.js"></script>
+<script>
+    var typed = new Typed('#typing-text', {
+        strings: ['THE MYSTERIOUS BLACK DOT', 'THE MYSTERIOUS BLACK DOT'],
+        typeSpeed: 50,
+        loop: true, 
+        backSpeed: 40,
+        backDelay: 800,
+        showCursor: false,
+        onStringTyped: (arrayPos, self) => {
+        console.log(self)
+        },
+    });
+</script>
+<script>
+    $(()=>{
+        setTimeout(function(){
+            $('.alert').fadeIn();
+            setTimeout(function(){
+                $('.alert').fadeOut();
+            }, 2500);
+        }, 1500);
+        $('.alert span:last-child').on('click',function(){
+            $(this).parent().fadeOut();
+        })
+    })
+</script>
+{% endblock additional_js %}
