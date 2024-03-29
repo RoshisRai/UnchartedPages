@@ -15,17 +15,6 @@ Uncharted Pages is a Python web application 🕸️ built using Django in the ba
 
 ## Models
 
-Uncharted Pages is a Python web application 🕸️ built using Django in the backend and HTML, CSS, JavaScript, and jQuery in the front end. This website features 3D animations and transitions 🎞️ to create an engaging user experience. Originally created to publish a collection of short stories, Uncharted Pages consists of six main pages:
-
-1. **Home** 🏠: The landing page provides an overview of the website.
-2. **About** 📖: Offers information about the author and the inspiration behind the short stories.
-3. **Contact** 📞: Allows visitors to make inquiries or provide feedback.
-4. **Blogs** 📝: Contains blog posts related to the short stories.
-5. **FAQ** ❓: Provides answers to frequently asked questions about the book and its content.
-6. **Buy Book** 💰: Provides information on purchasing the short story book.
-
-## Models
-
 The website utilizes four models:
 
 - **Blog** 📝: Stores blog posts related to the short stories.
