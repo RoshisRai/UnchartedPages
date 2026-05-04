@@ -1,101 +1,294 @@
-![Uncharted Pages](https://i.imgur.com/qsUXdmh.png)
+![Uncharted Pages](https://i.ibb.co/Zpk77hLj/uncharted-homepage.png)
 
-# 📚 Uncharted Pages
+# Uncharted Pages
 
-### [Live Website 🔗](https://unchartedpages.pythonanywhere.com/)
+### [Live Website](https://unchartedpages.pythonanywhere.com/)
 
-Uncharted Pages is a Python web application 🕸️ built using Django in the backend and HTML, CSS, JavaScript, and jQuery in the front end. This website features 3D animations and transitions 🎞️ to create an engaging user experience. Originally created to publish a collection of short stories, Uncharted Pages consists of six main pages:
+Uncharted Pages is a Django-based web app for publishing short stories and blog posts, with a public site, blog discovery, newsletter subscriptions, and a book purchase flow.
 
-1. **Home** 🏠: The landing page provides an overview of the website.
-2. **About** 📖: Offers information about the author and the inspiration behind the short stories.
-3. **Contact** 📞: Allows visitors to make inquiries or provide feedback.
-4. **Blogs** 📝: Contains blog posts related to the short stories.
-5. **FAQ** ❓: Provides answers to frequently asked questions about the book and its content.
-6. **Buy Book** 💰: Provides information on purchasing the short story book.
+## Main Pages
+1. Home: Landing page with the site overview.
+2. About: Author background and inspiration.
+3. Contact: Inquiry and feedback form.
+4. Blogs: Blog list and details.
+5. FAQ: Frequently asked questions.
+6. Buy Book: Purchase and order flow.
 
-## Models
-
-Uncharted Pages is a Python web application 🕸️ built using Django in the backend and HTML, CSS, JavaScript, and jQuery in the front end. This website features 3D animations and transitions 🎞️ to create an engaging user experience. Originally created to publish a collection of short stories, Uncharted Pages consists of six main pages:
-
-1. **Home** 🏠: The landing page provides an overview of the website.
-2. **About** 📖: Offers information about the author and the inspiration behind the short stories.
-3. **Contact** 📞: Allows visitors to make inquiries or provide feedback.
-4. **Blogs** 📝: Contains blog posts related to the short stories.
-5. **FAQ** ❓: Provides answers to frequently asked questions about the book and its content.
-6. **Buy Book** 💰: Provides information on purchasing the short story book.
+## Tech Stack
+- Python (Django 4.2)
+- SQLite (default database)
+- Pillow (image handling)
+- python-dotenv (environment variables)
 
 ## Models
+- Blog: Blog posts and categories.
+- BookOrder: Book orders with payment receipt uploads.
+- ContactUs: Contact form submissions.
+- NewsletterSubscriber: Newsletter subscribers.
 
-The website utilizes four models:
+## Project Structure (Quick View)
+- `manage.py`: Django entry point
+- `unchartedpages/`: project settings and root URLs
+- `home/`: main app with views, models, and URLs
+- `templates/`: HTML templates
+- `static/`: CSS, JS, images
+- `db.sqlite3`: local database
 
-- **Blog** 📝: Stores blog posts related to the short stories.
-- **BookOrder** 📦: Manages orders made for the book, including proof of payment upload.
-- **ContactUs** 📞: Records contact inquiries made by visitors.
-- **NewsLetterSubscriber** 📧: Manages subscribers for newsletters.
+## Full Folder and File Structure
+Copy-friendly tree with right-side comments:
 
-## Usage
+```
+.
+|-- .env                                   # environment variables (not committed)
+|-- db.sqlite3                             # local SQLite database
+|-- manage.py                              # Django entry point
+|-- requirements.txt                       # Python dependencies
+|-- draft-md.md                            # project documentation draft
+|-- home/                                  # main Django app
+|   |-- __init__.py                        # app package
+|   |-- admin.py                           # admin registrations
+|   |-- apps.py                            # app config
+|   |-- context_processors.py              # template context processors
+|   |-- models.py                          # database models
+|   |-- tests.py                           # app tests
+|   |-- urls.py                            # app routes
+|   |-- views.py                           # request handlers
+|   |-- migrations/                        # Django migrations
+|   |   |-- __init__.py                    # migrations package
+|   |   `-- 0001_initial.py                # initial schema
+|   `-- templatetags/                      # custom template tags
+|       |-- __init__.py                    # templatetags package
+|       `-- custom_tags.py                 # custom tags/filters
+|-- static/                                # global static assets
+|   |-- admin/                             # Django admin static assets
+|   |   |-- css/                           # admin CSS
+|   |   |   |-- autocomplete.css           # autocomplete styles
+|   |   |   |-- base.css                   # base admin styles
+|   |   |   |-- changelists.css            # changelist styles
+|   |   |   |-- dark_mode.css              # dark mode styles
+|   |   |   |-- dashboard.css              # dashboard styles
+|   |   |   |-- fonts.css                  # font styles
+|   |   |   |-- forms.css                  # form styles
+|   |   |   |-- login.css                  # login styles
+|   |   |   |-- nav_sidebar.css            # nav sidebar styles
+|   |   |   |-- responsive_rtl.css         # RTL responsive styles
+|   |   |   |-- responsive.css             # responsive styles
+|   |   |   |-- rtl.css                    # RTL styles
+|   |   |   |-- widgets.css                # widget styles
+|   |   |   `-- vendor/                    # vendor CSS
+|   |   |       `-- select2/               # Select2 styles
+|   |   |           |-- LICENSE-SELECT2.md # Select2 license
+|   |   |           |-- select2.css        # Select2 styles
+|   |   |           `-- select2.min.css    # Select2 minified styles
+|   |   |-- fonts/                         # admin fonts
+|   |   |   |-- LICENSE.txt                # font license
+|   |   |   `-- README.txt                 # font readme
+|   |   |-- img/                           # admin images
+|   |   |   |-- LICENSE                    # image license
+|   |   |   |-- README.txt                 # image readme
+|   |   |   `-- gis/                       # GIS assets
+|   |   `-- js/                            # admin JS
+|   |       |-- actions.js                 # action utilities
+|   |       |-- autocomplete.js            # autocomplete logic
+|   |       |-- calendar.js                # calendar widget
+|   |       |-- cancel.js                  # cancel behavior
+|   |       |-- change_form.js             # change form logic
+|   |       |-- collapse.js                # collapse behavior
+|   |       |-- core.js                    # admin core
+|   |       |-- filters.js                 # filter logic
+|   |       |-- inlines.js                 # inline form logic
+|   |       |-- jquery.init.js             # jQuery setup
+|   |       |-- nav_sidebar.js             # nav sidebar logic
+|   |       |-- popup_response.js          # popup handling
+|   |       |-- prepopulate_init.js        # prepopulate init
+|   |       |-- prepopulate.js             # prepopulate logic
+|   |       |-- SelectBox.js               # select box util
+|   |       |-- SelectFilter2.js           # select filter util
+|   |       |-- urlify.js                  # slug utility
+|   |       |-- admin/                     # admin JS helpers
+|   |       |   |-- DateTimeShortcuts.js   # datetime shortcuts
+|   |       |   `-- RelatedObjectLookups.js# related lookups
+|   |       `-- vendor/                    # vendor JS
+|   |           |-- jquery/                # jQuery
+|   |           |   |-- jquery.js          # jQuery
+|   |           |   |-- jquery.min.js      # jQuery minified
+|   |           |   `-- LICENSE.txt        # jQuery license
+|   |           |-- select2/               # Select2
+|   |           |   |-- LICENSE.md         # Select2 license
+|   |           |   |-- select2.full.js    # Select2 full
+|   |           |   |-- select2.full.min.js# Select2 minified
+|   |           |   `-- i18n/              # Select2 translations
+|   |           |       |-- af.js          # Afrikaans
+|   |           |       |-- ar.js          # Arabic
+|   |           |       |-- az.js          # Azerbaijani
+|   |           |       |-- bg.js          # Bulgarian
+|   |           |       |-- bn.js          # Bengali
+|   |           |       |-- bs.js          # Bosnian
+|   |           |       |-- ca.js          # Catalan
+|   |           |       |-- cs.js          # Czech
+|   |           |       |-- da.js          # Danish
+|   |           |       |-- de.js          # German
+|   |           |       |-- dsb.js         # Lower Sorbian
+|   |           |       |-- el.js          # Greek
+|   |           |       |-- en.js          # English
+|   |           |       |-- es.js          # Spanish
+|   |           |       |-- et.js          # Estonian
+|   |           |       |-- eu.js          # Basque
+|   |           |       |-- fa.js          # Persian
+|   |           |       |-- fi.js          # Finnish
+|   |           |       |-- fr.js          # French
+|   |           |       |-- gl.js          # Galician
+|   |           |       |-- he.js          # Hebrew
+|   |           |       |-- hi.js          # Hindi
+|   |           |       |-- hr.js          # Croatian
+|   |           |       |-- hsb.js         # Upper Sorbian
+|   |           |       |-- hu.js          # Hungarian
+|   |           |       |-- hy.js          # Armenian
+|   |           |       `-- ...            # more i18n files
+|   |           `-- xregexp/               # XRegExp
+|   |               |-- LICENSE.txt        # XRegExp license
+|   |               |-- xregexp.js         # XRegExp
+|   |               `-- xregexp.min.js     # XRegExp minified
+|   |-- css/                               # site CSS
+|   |   |-- about.css                       # about page styles
+|   |   |-- blogpost.css                    # blog post styles
+|   |   |-- blogs.css                       # blog list styles
+|   |   |-- blogsearch.css                  # search styles
+|   |   |-- buybook.css                     # buy book styles
+|   |   |-- contact.css                     # contact styles
+|   |   |-- faq.css                         # FAQ styles
+|   |   `-- styles.css                      # global styles
+|   |-- img/                               # site images
+|   `-- js/                                # site JS
+|       |-- app.js                         # app scripts
+|       |-- jquery.min.js                  # jQuery
+|       |-- particles.min.js               # particles lib
+|       |-- scripts.js                     # site scripts
+|       `-- tinyinject.js                  # tinyinject lib
+|-- templates/                             # Django templates
+|   |-- base.html                          # base template
+|   |-- admin/                             # admin template overrides
+|   |   |-- 404.html                        # admin 404
+|   |   |-- base_site.html                  # admin base site
+|   |   `-- base.html                       # admin base
+|   `-- home/                              # app templates
+|       |-- about.html                      # about page
+|       |-- blogpost.html                   # blog post page
+|       |-- blogs.html                      # blog list page
+|       |-- blogsearch.html                 # blog search page
+|       |-- buybook.html                    # buy book page
+|       |-- contact.html                    # contact page
+|       |-- faq.html                        # FAQ page
+|       `-- index.html                      # home page
+`-- unchartedpages/                        # project configuration
+    |-- __init__.py                         # package init
+    |-- asgi.py                             # ASGI config
+    |-- settings.py                         # settings
+    |-- sitemaps.py                         # sitemap definitions
+    |-- urls.py                             # root URLs
+    `-- wsgi.py                             # WSGI config
+```
 
-To use Uncharted Pages:
+## Environment Variables
+Create a `.env` file in the project root with:
 
-1. Clone the repository:
+- `DJANGO_SECRET_KEY`
 
-    ```bash
-    git clone https://github.com/RoshisRai/UnchartedPages.git
-    ```
+## Configuration Notes
+- Set `DEBUG` to `False` for production.
+- Configure `ALLOWED_HOSTS` for your domain(s).
+- Static files are served from `static/` in development.
+- Media uploads are stored under `media/`.
 
-2. Install Dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
+## URL Routes
+Root routes are defined in the project and home app:
+- `/`: Home page
+- `/about-us/`: About page
+- `/blogs/`: Blog list
+- `/blog-search/`: Blog search
+- `/blog-post/<slug>/`: Blog details
+- `/buy-book/`: Book purchase form
+- `/contact-us/`: Contact form
+- `/frequently-asked-questions/`: FAQ
+- `/newsletter-subscriber/`: Newsletter signup
+- `/admin/`: Django admin
+- `/sitemap.xml/`: Sitemap
 
-3. Make Migrations:
+## Local Development
+1. Create and activate a virtual environment.
+2. Install dependencies:
 
-    Generate migration files for the four models (Blog, BookOrder, ContactUs, NewsLetterSubscriber) in the `home` app:
-    ```bash
-    python manage.py makemigrations home
-    ```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-4. Run Migrations:
+3. Set `.env` values.
+4. Make migrations (if needed):
 
-    ```bash
-    python manage.py migrate
-    ```
+   ```bash
+   python manage.py makemigrations home
+   ```
 
-5. Create a Superuser:
+5. Run migrations:
 
-    ```bash
-    python manage.py createsuperuser
-    ```
+   ```bash
+   python manage.py migrate
+   ```
 
-6. Start the Development Server:
+6. Create a superuser:
 
-    ```bash
-    python manage.py runserver
-    ```
+   ```bash
+   python manage.py createsuperuser
+   ```
 
-7. Adding Blog Posts:
+7. Start the development server:
 
-    To add blog posts, log in to the admin dashboard:
-    - Navigate to [http://localhost:8000/admin](http://localhost:8000/admin)
-    - Enter your superuser credentials
-    - Add/edit blog posts under the Blog section
+   ```bash
+   python manage.py runserver
+   ```
 
-### Contributing
+## Admin Content
+- Visit http://localhost:8000/admin
+- Log in with your superuser credentials
+- Add or edit posts under the `Blog` section
 
-We welcome contributions to this project! If you'd like to contribute, please follow these steps:
+## Production Checklist
+1. Set `DEBUG` to `False` and configure `ALLOWED_HOSTS`.
+2. Set `DJANGO_SECRET_KEY` in your environment.
+3. Collect static files:
 
+   ```bash
+   python manage.py collectstatic
+   ```
+
+4. Configure media storage and backups.
+5. Use a production-grade WSGI server (gunicorn/uwsgi) and a reverse proxy.
+
+## Contributing
+We welcome contributions. Suggested workflow:
 1. Fork the repository.
-2. Create a new branch: `git checkout -b <branch_name>`.
-3. Make your changes and commit them: `git commit -m '<commit_message>'`.
-4. Push to the original branch: `git push origin <project_name>/<location>`.
-5. Create the pull request.
+2. Create a branch:
 
-Alternatively, see the GitHub documentation on [creating a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
+   ```bash
+   git checkout -b <branch_name>
+   ```
 
-### License
+3. Commit changes:
 
-This project is licensed under the MIT License - see the `LICENSE` file for details.
+   ```bash
+   git commit -m "<commit_message>"
+   ```
 
-### Contact
+4. Push:
 
-If you have any questions or feedback, please contact me at 📧 roshis.awai@gmail.com.
+   ```bash
+   git push origin <branch_name>
+   ```
+
+5. Open a pull request.
+
+## License
+MIT License. See `LICENSE` for details.
+
+## Contact
+Questions or feedback: roshis.awai@gmail.com
